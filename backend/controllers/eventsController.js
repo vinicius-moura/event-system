@@ -6,6 +6,16 @@ function getEvents(req, res) {
   res.json(events);
 }
 
+function getEventById(req, res) {
+  const events = loadEvents();
+  const id = Number(req.params.id);
+  const index = events.findIndex(e => e.id === id);
+
+  if (index === -1) return res.status(404).json({ error: "Event not found" });
+
+  res.json(events[index]);
+}
+
 function createEvent(req, res) {
   const events = loadEvents();
   const newEvent = { id: Date.now(), ...req.body };
@@ -38,4 +48,4 @@ function deleteEvent(req, res) {
   res.status(204).end();
 }
 
-module.exports = { getEvents, createEvent, updateEvent, deleteEvent };
+module.exports = { getEvents, getEventById, createEvent, updateEvent, deleteEvent };

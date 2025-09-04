@@ -1,13 +1,9 @@
-import { Event } from "../types";
-
-export async function fetchEvents(): Promise<Event[]> {
+export async function fetchEvents() {
   const res = await fetch("http://localhost:4000/events", { cache: "no-store" });
-  const data = await res.json();
-  return data;
+  return await res.json();
 }
 
-export async function fetchEvent(id: string): Promise<Event> {
+export async function fetchEvent(id: string) {
   const res = await fetch(`http://localhost:4000/events/${id}`, { cache: "no-store" });
-  const data = await res.json();
-  return data;
+  return await res.json();
 }
