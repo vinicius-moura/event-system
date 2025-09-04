@@ -1,0 +1,37 @@
+.body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  padding: 1rem 2rem;
+  background-color: #1e90ff;
+  color: white;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.main {
+  padding: 2rem;
+  background-color: #f0f2f5;
+  min-height: calc(100vh - 120px);
+}
+
+.footer {
+  padding: 1rem 2rem;
+  background-color: #1e90ff;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
